@@ -15,7 +15,7 @@ def test_check():
     assert check_num(0) == "Zero"
 
 def test_primes():
-    assert primes == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    assert for_primes(10)  == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
 def test_sum():
     assert the_sum(100) == 5050

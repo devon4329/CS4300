@@ -1,4 +1,5 @@
 # Task 3 - Control Structures
+import math
 
 # Checking if number is pos, neg, or zero
 def check_num(x):
@@ -11,14 +12,21 @@ def check_num(x):
     else:
         return "Zero"
 
-# for loop to print results of firt 10 primes
-def for_primes(N):
-    primes_list = []
-    start_num = 2
-    for i in range(start_num, N):
-        if start_num % i == 0:
-            
-    return True
+# for loop to print results of first 10 primes
+def for_primes(num):
+    prime_list = []
+    prime_num = 2
+
+    while len(prime_list) < num:
+        is_prime = True
+        for i in range (2, int(math.sqrt(prime_num)) + 1):
+            if prime_num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            prime_list.append(prime_num)
+        prime_num += 1
+    return prime_list        
 
 # While loop to find the sum of all numbers from 1 to 100
 def the_sum(nums):
@@ -30,3 +38,8 @@ def the_sum(nums):
         count += 1
     
     return total
+
+if __name__ == "__main__":
+    n = 10
+    prime_list = for_primes(n)
+    print(prime_list)
